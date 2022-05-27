@@ -1,0 +1,43 @@
+database schema
+
+CREATE TABLE user (
+username VARCHAR(50) PPRIMARY KEY,
+email VARCHAR(255) NOT NULL,
+password VARCHAR(50) NOT NULL,
+);
+
+
+CREATE TABLE item (
+item_id INT PRIMARY KEY,
+name VARCHAR (255) NOT NULL,
+img_name VARCHAR (255) NOT NULL,
+cost INT NOT NULL, 
+ad INT, 
+ap INT, 
+health INT, 
+mana INT, 
+health INT, 
+armour INT, 
+magic_resist INT, 
+
+);
+
+CREATE TABLE champion(
+champ_id INT PRIMARY KEY,
+name VARCHAR (50) NOT NULL,
+img_name VARCHAR (255) NOT NULL,
+role VARCHAR (50),
+);
+
+
+CREATE TABLE build (
+build_id 
+champ id
+4 items
+)
+
+
+
+
+
+

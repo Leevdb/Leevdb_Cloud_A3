@@ -1,0 +1,109 @@
+----------------------------------------
+/var/log/eb-engine.log
+----------------------------------------
+2022/05/08 12:22:00.055528 [INFO] Running command /bin/sh -c npm config set jobs 1
+2022/05/08 12:22:01.280870 [INFO] Running command /bin/sh -c npm --production install
+2022/05/08 12:28:15.533993 [ERROR] An error occurred during execution of command [app-deploy] - [Use NPM to install dependencies]. Stop running the command. Error: Command /bin/sh -c npm --production install failed with error signal: killed 
+
+2022/05/08 12:28:15.534672 [INFO] Executing cleanup logic
+2022/05/08 12:28:15.550553 [INFO] CommandService Response: {"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"Engine execution has encountered an error.","returncode":1,"events":[{"msg":"Instance deployment: You didn't specify a Node.js version in the 'package.json' file in your source bundle. The deployment didn't install a specific Node.js version.","timestamp":1652012520055,"severity":"INFO"},{"msg":"Instance deployment: 'npm' failed to install dependencies that you defined in 'package.json'. For details, see 'eb-engine.log'. The deployment failed.","timestamp":1652012895532,"severity":"ERROR"},{"msg":"Instance deployment failed. For details, see 'eb-engine.log'.","timestamp":1652012895536,"severity":"ERROR"}]}]}
+
+2022/05/08 12:28:15.554671 [INFO] Platform Engine finished execution on command: app-deploy
+
+2022/05/09 12:05:28.993996 [INFO] Starting...
+2022/05/09 12:05:28.994044 [INFO] Starting EBPlatform-PlatformEngine
+2022/05/09 12:05:28.994079 [INFO] reading event message file
+2022/05/09 12:05:28.995676 [INFO] Engine received EB command cfn-hup-exec
+
+2022/05/09 12:05:29.093286 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-1:419819364120:stack/awseb-e-b5z2wyhcby-stack/f1414390-cec8-11ec-9410-02e8715b42b1 -r AWSEBAutoScalingGroup --region us-west-1
+2022/05/09 12:05:29.626434 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-1:419819364120:stack/awseb-e-b5z2wyhcby-stack/f1414390-cec8-11ec-9410-02e8715b42b1 -r AWSEBBeanstalkMetadata --region us-west-1
+2022/05/09 12:05:29.913374 [INFO] checking whether command tail-log is applicable to this instance...
+2022/05/09 12:05:29.913389 [INFO] this command is applicable to the instance, thus instance should execute command
+2022/05/09 12:05:29.913394 [INFO] Engine command: (tail-log)
+
+2022/05/09 12:05:29.914526 [INFO] Executing instruction: GetTailLogs
+2022/05/09 12:05:29.914537 [INFO] Tail Logs...
+2022/05/09 12:05:29.918360 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
+2022/05/09 12:05:29.922952 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-hooks.log
+2022/05/09 12:05:30.019089 [INFO] Executing cleanup logic
+2022/05/09 12:05:30.019220 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1652097930019,"severity":"INFO"}]}]}
+
+2022/05/09 12:05:30.019369 [INFO] Platform Engine finished execution on command: tail-log
+
+2022/05/11 12:30:38.549183 [INFO] Starting...
+2022/05/11 12:30:38.549226 [INFO] Starting EBPlatform-PlatformEngine
+2022/05/11 12:30:38.549245 [INFO] reading event message file
+2022/05/11 12:30:38.549388 [INFO] Engine received EB command cfn-hup-exec
+
+2022/05/11 12:30:38.645375 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-1:419819364120:stack/awseb-e-b5z2wyhcby-stack/f1414390-cec8-11ec-9410-02e8715b42b1 -r AWSEBAutoScalingGroup --region us-west-1
+2022/05/11 12:30:38.938625 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-1:419819364120:stack/awseb-e-b5z2wyhcby-stack/f1414390-cec8-11ec-9410-02e8715b42b1 -r AWSEBBeanstalkMetadata --region us-west-1
+2022/05/11 12:30:39.234242 [INFO] checking whether command app-deploy is applicable to this instance...
+2022/05/11 12:30:39.234256 [INFO] this command is applicable to the instance, thus instance should execute command
+2022/05/11 12:30:39.234260 [INFO] Engine command: (app-deploy)
+
+2022/05/11 12:30:39.234266 [INFO] Downloading EB Application...
+2022/05/11 12:30:39.234270 [INFO] Region: us-west-1
+2022/05/11 12:30:39.234274 [INFO] envID: e-b5z2wyhcby
+2022/05/11 12:30:39.234278 [INFO] envBucket: elasticbeanstalk-us-west-1-419819364120
+2022/05/11 12:30:39.234282 [INFO] Using manifest file name from command request
+2022/05/11 12:30:39.234293 [INFO] Manifest name is : manifest_1652272235763
+2022/05/11 12:30:39.234297 [INFO] Download app version manifest
+2022/05/11 12:30:39.234411 [INFO] Downloading: bucket: elasticbeanstalk-us-west-1-419819364120, object: /resources/environments/e-b5z2wyhcby/_runtime/versions/manifest_1652272235763
+2022/05/11 12:30:39.282661 [INFO] Download successful102bytes downloaded
+2022/05/11 12:30:39.282816 [INFO] Trying to read and parse version manifest...
+2022/05/11 12:30:39.282917 [INFO] Downloading: bucket: elasticbeanstalk-us-west-1-419819364120, object: /resources/environments/e-b5z2wyhcby/_runtime/_versions/cloud-a3-web/cloud-a3-web-source-1
+2022/05/11 12:30:39.322895 [INFO] Download successful839796bytes downloaded
+2022/05/11 12:30:39.323137 [INFO] Executing instruction: ElectLeader
+2022/05/11 12:30:39.323146 [INFO] Running leader election for instance i-051d448cc0b451be2...
+2022/05/11 12:30:39.323150 [INFO] Calling the cfn-elect-cmd-leader to elect the command leader.
+2022/05/11 12:30:39.323163 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-elect-cmd-leader --stack arn:aws:cloudformation:us-west-1:419819364120:stack/awseb-e-b5z2wyhcby-stack/f1414390-cec8-11ec-9410-02e8715b42b1 --command-name ElasticBeanstalkCommand-AWSEBAutoScalingGroup --invocation-id 717e887b-6790-48d7-91d0-7980a0cbd8f7 --listener-id i-051d448cc0b451be2 --region us-west-1
+2022/05/11 12:30:39.649699 [INFO] Instance is Leader.
+2022/05/11 12:30:39.649748 [INFO] Executing instruction: stopSqsd
+2022/05/11 12:30:39.649755 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
+2022/05/11 12:30:39.649759 [INFO] Executing instruction: PreBuildEbExtension
+2022/05/11 12:30:39.649763 [INFO] Starting executing the config set Infra-EmbeddedPreBuild.
+2022/05/11 12:30:39.649778 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-west-1:419819364120:stack/awseb-e-b5z2wyhcby-stack/f1414390-cec8-11ec-9410-02e8715b42b1 -r AWSEBAutoScalingGroup --region us-west-1 --configsets Infra-EmbeddedPreBuild
+2022/05/11 12:30:39.996929 [INFO] Finished executing the config set Infra-EmbeddedPreBuild.
+
+2022/05/11 12:30:39.996964 [INFO] Executing instruction: StageApplication
+2022/05/11 12:30:40.051885 [INFO] extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/
+2022/05/11 12:30:40.051910 [INFO] Running command /bin/sh -c /usr/bin/unzip -q -o /opt/elasticbeanstalk/deployment/app_source_bundle -d /var/app/staging/
+2022/05/11 12:30:40.087031 [INFO] finished extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/ successfully
+2022/05/11 12:30:40.088191 [INFO] Executing instruction: RunAppDeployPreBuildHooks
+2022/05/11 12:30:40.088215 [INFO] Executing platform hooks in .platform/hooks/prebuild/
+2022/05/11 12:30:40.088234 [INFO] The dir .platform/hooks/prebuild/ does not exist
+2022/05/11 12:30:40.088246 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/prebuild
+2022/05/11 12:30:40.088253 [INFO] Executing instruction: Install customer specified node.js version
+2022/05/11 12:30:40.088258 [INFO] installing specified nodejs version...
+2022/05/11 12:30:40.089503 [INFO] there is no nodejs version specified in package.json, skip installing specified version of nodejs
+2022/05/11 12:30:40.089542 [INFO] Executing instruction: Use NPM to install dependencies
+2022/05/11 12:30:40.089558 [INFO] use npm to install dependencies
+2022/05/11 12:30:40.089592 [INFO] Running command /bin/sh -c npm config set jobs 1
+2022/05/11 12:30:41.291654 [INFO] Running command /bin/sh -c npm --production install
+2022/05/11 12:41:03.222565 [ERROR] An error occurred during execution of command [app-deploy] - [Use NPM to install dependencies]. Stop running the command. Error: Command /bin/sh -c npm --production install failed with error signal: killed 
+
+2022/05/11 12:41:03.223086 [INFO] Executing cleanup logic
+2022/05/11 12:41:03.253049 [INFO] CommandService Response: {"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"Engine execution has encountered an error.","returncode":1,"events":[{"msg":"Instance deployment: You didn't specify a Node.js version in the 'package.json' file in your source bundle. The deployment didn't install a specific Node.js version.","timestamp":1652272240089,"severity":"INFO"},{"msg":"Instance deployment: 'npm' failed to install dependencies that you defined in 'package.json'. For details, see 'eb-engine.log'. The deployment failed.","timestamp":1652272863207,"severity":"ERROR"},{"msg":"Instance deployment failed. For details, see 'eb-engine.log'.","timestamp":1652272863240,"severity":"ERROR"}]}]}
+
+2022/05/11 12:41:03.271364 [INFO] Platform Engine finished execution on command: app-deploy
+
+2022/05/11 12:42:12.379989 [INFO] Starting...
+2022/05/11 12:42:12.380610 [INFO] Starting EBPlatform-PlatformEngine
+2022/05/11 12:42:12.384377 [INFO] reading event message file
+2022/05/11 12:42:12.420630 [INFO] Engine received EB command cfn-hup-exec
+
+2022/05/11 12:42:12.614995 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-1:419819364120:stack/awseb-e-b5z2wyhcby-stack/f1414390-cec8-11ec-9410-02e8715b42b1 -r AWSEBAutoScalingGroup --region us-west-1
+2022/05/11 12:42:13.822138 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-1:419819364120:stack/awseb-e-b5z2wyhcby-stack/f1414390-cec8-11ec-9410-02e8715b42b1 -r AWSEBBeanstalkMetadata --region us-west-1
+2022/05/11 12:42:14.122118 [INFO] checking whether command tail-log is applicable to this instance...
+2022/05/11 12:42:14.122138 [INFO] this command is applicable to the instance, thus instance should execute command
+2022/05/11 12:42:14.122142 [INFO] Engine command: (tail-log)
+
+2022/05/11 12:42:14.123822 [INFO] Executing instruction: GetTailLogs
+2022/05/11 12:42:14.123829 [INFO] Tail Logs...
+2022/05/11 12:42:14.143708 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
+
+
+----------------------------------------
+/var/log/eb-hooks.log
+----------------------------------------
+
