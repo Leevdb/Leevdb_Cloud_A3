@@ -1,0 +1,17 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "preserveConstEnums": true,
+    "module": "commonjs",
+    "outDir": "dist",
+    "baseUrl": "./",
+  },
+  "include": [
+    "**/*.ts",    
+    "../tests/**/*.ts",
+  ],
+  "exclude": [
+    "../node_modules",
+  ],
+}

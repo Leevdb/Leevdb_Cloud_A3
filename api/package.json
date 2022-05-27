@@ -1,0 +1,38 @@
+{
+  "name": "cloud_a3",
+  "version": "1.0.0",
+  "description": "express api for cloud assignment 3",
+  "main": "nodemon src/index.ts",
+  "scripts": {
+    "start": "node ./dist/src/index.js",
+    "build": "tsc",
+    "dev": "nodemon",
+    "test": "jest"
+  },
+  "author": "Lee Van Den Blink",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.25",
+    "eslint": "^8.14.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "supertest": "^6.2.2",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.74.0",
+    "@aws-sdk/s3-request-presigner": "^3.74.0",
+    "@shelf/jest-dynamodb": "^2.2.4",
+    "aws-sdk": "^2.1127.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
